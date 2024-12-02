@@ -1,3 +1,4 @@
+
 from http.server import BaseHTTPRequestHandler, HTTPServer
 from urllib.parse import urlparse, parse_qs
 from controllers.weather_controller import WeatherController
@@ -22,7 +23,7 @@ class RequestHandler(BaseHTTPRequestHandler):
         if not city:
             self.send_response(400)
             self.end_headers()
-            self.wfile.write(b"O parâmetro 'city' é obrigatório.")
+            self.wfile.write("O parâmetro 'city' é obrigatório.")
             return
 
         # Chama o controlador
